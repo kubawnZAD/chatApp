@@ -61,29 +61,25 @@ h1{
     transform: translate(-50%,-50%);
     background-color: #f5f6fa;
     
-  }
-  
-  .messages {
+}
+.messages{
     height: 80%;
     padding: 10px;
     overflow-y: auto;
     
-  }
+}
   
-  form {
+form{
     display: flex;
     padding: 10px;
-  }
-  
-  .msg {
+}
+.msg{
     flex-grow: 1;
     padding: 5px;
     border-radius: 4px;
     border: 1px solid #ccc;
-  }
-  
-
-  
+    outline: none;
+}
 .sbm{
     background: none;
     height: 50px;
@@ -97,3 +93,26 @@ h1{
 .sbm:active{
     opacity: 0.5;
 }
+.file-label {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+#file-icon{
+    font-size: 230%;
+    transition: 0.2s;
+}
+#file-icon:hover{
+    font-size: 300%;
+}
+  
+.file{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+  img{
+    right:0
+  }

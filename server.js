@@ -13,6 +13,9 @@ const io = require("socket.io")(server, {
     socket.on("message",(obj)=>{
         socket.broadcast.emit("message",obj)
     })
+    socket.on("messageIMG",(obj)=>{
+      socket.broadcast.emit("messageIMG",obj)
+    })
     
     
   });
