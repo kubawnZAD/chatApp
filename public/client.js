@@ -16,7 +16,7 @@ form.addEventListener("submit",(e)=>{
     var file = document.querySelector(".file").files[0];
     
     var img = document.createElement("img");
-    if (file) {
+    if (isImage(file)) {
         const reader = new FileReader();
         reader.addEventListener('load', function() {
           img.setAttribute('src', reader.result);
@@ -29,6 +29,7 @@ form.addEventListener("submit",(e)=>{
         });
         
         reader.readAsDataURL(file);
+        file.value="";
         }
 
     
@@ -43,7 +44,7 @@ form.addEventListener("submit",(e)=>{
     
     input.value="";
     messages.scrollTop = messages.scrollHeight;
-    file=null;
+    
 
 })
 
@@ -63,3 +64,7 @@ socket.on("messageIMG",(obj)=>{
 socket.on("connected",()=>{
     alert("nowy użytkownik się połączył")
 })
+function isImage(file) {
+    const acceptedImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    return file && acceptedImageTypes.includes(file.type);
+  }
